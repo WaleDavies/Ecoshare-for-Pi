@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoShare for Pi - Sustainable Resource Sharing</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Pi SDK Script -->
+    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+</head>
+<body>
+    <header>
+        <h1>EcoShare for Pi</h1>
+        <button id="login-btn">Login with Pi</button>
+        <p id="user-info"></p>
+    </header>
+   
+    <section id="listings">
+        <h2>Available Shares</h2>
+        <ul id="share-list"></ul>
+    </section>
+   
+    <section id="add-listing">
+        <h2>List a Resource</h2>
+        <input type="text" id="item-name" placeholder="Item Name (e.g., Bike)">
+        <input type="text" id="description" placeholder="Description">
+        <input type="number" id="price" placeholder="Price in Pi">
+        <label><input type="checkbox" id="eco-friendly"> Eco-Friendly (Bonus Pi)</label>
+        <button id="submit-listing">Add Listing</button>
+    </section>
+   
+    <section id="map-section">
+        <h2>Nearby Shares</h2>
+        <div id="map" style="height: 300px;"></div> <!-- Placeholder for map -->
+    </section>
+   
+    <script src="script.js"></script>
+    <script>
+        // Initialize Pi SDK - Replace 'YOUR_APP_ID' with your App ID from Developer Portal
+        Pi.init({ version: "2.0", appId: "YOUR_APP_ID" });
+    </script>
+</body>
+</html>
