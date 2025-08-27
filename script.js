@@ -50,7 +50,9 @@ async function payForItem(index) {
         const payment = await Pi.createPayment({
             amount: item.price,
             memo: `Payment for ${item.name}`,
-            metadata: { itemId: index }
+            metadata: { itemId: index },
+            recipient: 'GAP2N74IHEIH2S5W3YILISO2OM6H6XOIECW4XUHRI4YR4DDIZJH3VRZ4'  // Add this line
+}, {
         }, {
             onReadyForServerApproval: (paymentId) => console.log('Ready for approval:', paymentId),
             onReadyForServerCompletion: (paymentId, txid) => console.log('Completed:', txid),
@@ -76,3 +78,4 @@ if (document.getElementById('map')) {
 
 // AI Matching Placeholder (For demo: Suggest matches)
 console.log('AI Matching: Coming soon - recommends based on location/history');
+
